@@ -1,0 +1,18 @@
+Kernel core include :- 
+ Device Tree Overview
+ Clock Driver
+ Battery Charging
+ PIL / SCM (Secure Communication)
+ Data Mover / Timers
+ GNU Crash tool for analyzing kernel crashes
+ CPU Hot Plug
+ BAM using DMAENGINE API
+ Introducing VMX;: A tool for extracting VMCORE from the raw memory dump, to enable Crash based debugging
+ Introducing OMAP PM Architecture: The differences between MSM power management and that of OMAP. The architecture design and various use cases will be explored and compared on both OMAP and MSM.
+ Bus Access Manager (BAM) using DMAEngine API: This presentation will cover Tim's work on the BAM driver using the DMAEngine API along with the benefits, limitations, and future extensions for the system to system, device to system and system to device use cases. The last portion of the presentation will cover an analysis and recommendation of the possible ways to implement the device to device use case
+ GPIO and GPIOMUX
+ KGSL -- Android Kernel Graphics subsystem
+ QDSS
+  Kernel Memory Management
+  T32 Debugging Bootlloader
+  Device Tree Experiences
