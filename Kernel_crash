@@ -1,0 +1,44 @@
+Tutorial Links:
+
+https://www.dedoimedo.com/computers/crash-analyze.html#mozTocId877838
+
+
+
+
+BUG: unable to handle kernel NULL pointer dereference at (null) 
+IP: [<ffffffffa03e1012>] my_oops_init+0x12/0x21 [oops]         ->  my_oops_init function where NULL pointer dereference happend
+PGD 7a719067 PUD 7b2b3067 PMD 0                                ->  Page table information of the address we are trying to refrence
+Oops: 0002 [#1] SMP                                            -> Oops: the back of the 0002 (binary number: 0010) is the error code.
+                                                                 Binary representation of the meaning of each bit of time that was from left to right will be explained as follows.
+                                                                  Success in the instruction fetch if 1 bit th ... 1, fails if the 0
+                                                                  2 bit first ... 1 if the user mode, 0 if the kernel mode
+                                                                  3 bit first ... 1 if the write access, 0 if read or execute access
+                                                                  4 bit th ... 1 if an invalid access, 0 if the page does not exist       
+last sysfs file: /sys/devices/virtual/misc/kvm/uevent          -> 
+CPU 1 
+Pid: 2248, comm: insmod Tainted: P           2.6.33.3-85.fc13.x86_64 
+RIP: 0010:[<ffffffffa03e1012>]  [<ffffffffa03e1012>] my_oops_init+0x12/0x21 [oops]    ->   RIP from CR2 is the information in register at the time of crash.
+RSP: 0018:ffff88007ad4bf08  EFLAGS: 00010292 
+RAX: 0000000000000018 RBX: ffffffffa03e1000 RCX: 00000000000013b7 
+RDX: 0000000000000000 RSI: 0000000000000046 RDI: 0000000000000246 
+RBP: ffff88007ad4bf08 R08: ffff88007af1cba0 R09: 0000000000000004 
+R10: 0000000000000000 R11: ffff88007ad4bd68 R12: 0000000000000000 
+R13: 00000000016b0030 R14: 0000000000019db9 R15: 00000000016b0010 
+FS:  00007fb79dadf700(0000) GS:ffff880001e80000(0000) knlGS:0000000000000000 
+CS:  0010 DS: 0000 ES: 0000 CR0: 000000008005003b 
+CR2: 0000000000000000 CR3: 000000007a0f1000 CR4: 00000000000006e0 
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000 
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000400 
+Process insmod (pid: 2248, threadinfo ffff88007ad4a000, task ffff88007a222ea0) 
+Stack: 
+ffff88007ad4bf38 ffffffff8100205f ffffffffa03de060 ffffffffa03de060 
+ 0000000000000000 00000000016b0030 ffff88007ad4bf78 ffffffff8107aac9 
+ ffff88007ad4bf78 00007fff69f3e814 0000000000019db9 0000000000020000 
+Call Trace:                                                                        ->  Call is the information of the trace.
+[<ffffffff8100205f>] do_one_initcall+0x59/0x154 
+[<ffffffff8107aac9>] sys_init_module+0xd1/0x230 
+[<ffffffff81009b02>] system_call_fastpath+0x16/0x1b 
+Code: <c7> 04 25 00 00 00 00 00 00 00 00 31 c0 c9 c3 00 00 00 00 00 00 00          ->  The code information from the address indicated RIP is up to 64 bytes.
+RIP  [<ffffffffa03e1012>] my_oops_init+0x12/0x21 [oops]                            ->  It is the same as the above-mentioned register of information (content seems to be that they are duplicates).
+RSP <ffff88007ad4bf08> 
+CR2: 0000000000000000
